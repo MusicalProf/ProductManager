@@ -1,8 +1,9 @@
 import logo from "./logo.svg";
 import "./App.css";
-import {Router} from '@reach/router';
+import {Link, Router} from '@reach/router';
 import Main from "./views/Main";
 import Detail from "./views/Detail";
+import Update from "./views/Update";
 
 function App() {
   return (
@@ -11,8 +12,9 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
       </header>
       <Router>
-        <Main path="/api/products" />
-        <Detail path="/api/products/:_id" />
+        <Main path="/" />
+        <Detail path="/products/:_id" />
+        <Update path="/products/:_id/edit"/>
       </Router>
     </div>
   );

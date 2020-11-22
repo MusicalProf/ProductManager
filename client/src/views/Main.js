@@ -18,12 +18,16 @@ export default () => {
       .catch((err) => console.log("Error:", err));
   }, []);
 
+  const removeFromDom = productId => {
+    setProducts(products.filter(product => product._id != productId));
+  }
+
   return (
     <div>
       <ProductForm />
       <hr/>
       <h2>All of the Products are Below</h2>
-      {loaded && <ProductList products={products}/>}
+      {loaded && <ProductList products={products} removeFromDom={removeFromDom}/>}
     </div>
   );
 };
